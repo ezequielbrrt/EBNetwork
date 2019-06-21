@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EBNetwork_Example' do
+  pod 'EBNetwork', :path => '../'
+
+  target 'EBNetwork_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
