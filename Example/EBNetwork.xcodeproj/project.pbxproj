@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		225C1079D65129FEDFFBA07B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		225C1079D65129FEDFFBA07B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5E6A4541B5AABD5AC5D988AC /* Pods-EBNetwork_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBNetwork_Tests.release.xcconfig"; path = "Target Support Files/Pods-EBNetwork_Tests/Pods-EBNetwork_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EBNetwork_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBNetwork_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,13 +40,13 @@
 		607FACE51AFB9204008FA782 /* EBNetwork_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBNetwork_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		676EAA829CFC9F4A94760B81 /* EBNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = EBNetwork.podspec; path = ../EBNetwork.podspec; sourceTree = "<group>"; };
+		676EAA829CFC9F4A94760B81 /* EBNetwork.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EBNetwork.podspec; path = ../EBNetwork.podspec; sourceTree = "<group>"; };
 		703C67527F6CE139381B4758 /* Pods-EBNetwork_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBNetwork_Example.release.xcconfig"; path = "Target Support Files/Pods-EBNetwork_Example/Pods-EBNetwork_Example.release.xcconfig"; sourceTree = "<group>"; };
 		9A7A8D2BD7C84F824D067E3C /* Pods_EBNetwork_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EBNetwork_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E3A4729F7743E6DB334BC5 /* Pods-EBNetwork_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBNetwork_Tests.debug.xcconfig"; path = "Target Support Files/Pods-EBNetwork_Tests/Pods-EBNetwork_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D99E79AB34EC77006378631C /* Pods_EBNetwork_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EBNetwork_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09E7A7C0D3D26914CC55B16 /* Pods-EBNetwork_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EBNetwork_Example.debug.xcconfig"; path = "Target Support Files/Pods-EBNetwork_Example/Pods-EBNetwork_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		EF2EE2FD4A2BDD94AECA0C3A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EF2EE2FD4A2BDD94AECA0C3A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,6 @@
 				D0E3A4729F7743E6DB334BC5 /* Pods-EBNetwork_Tests.debug.xcconfig */,
 				5E6A4541B5AABD5AC5D988AC /* Pods-EBNetwork_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5CAN8GD86W;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 5CAN8GD86W;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -478,6 +480,7 @@
 			baseConfigurationReference = E09E7A7C0D3D26914CC55B16 /* Pods-EBNetwork_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CAN8GD86W;
 				INFOPLIST_FILE = EBNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +496,7 @@
 			baseConfigurationReference = 703C67527F6CE139381B4758 /* Pods-EBNetwork_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5CAN8GD86W;
 				INFOPLIST_FILE = EBNetwork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0E3A4729F7743E6DB334BC5 /* Pods-EBNetwork_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5CAN8GD86W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E6A4541B5AABD5AC5D988AC /* Pods-EBNetwork_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 5CAN8GD86W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

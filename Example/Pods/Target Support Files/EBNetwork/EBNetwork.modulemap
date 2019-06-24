@@ -1,0 +1,6 @@
+framework module EBNetwork {
+  umbrella header "EBNetwork-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - EBNetwork (0.1.0)
+
+DEPENDENCIES:
+  - EBNetwork (from `../`)
+
+EXTERNAL SOURCES:
+  EBNetwork:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EBNetwork: ed90154deede86b2bd6ec2de12eb2ea9004fdf65
+
+PODFILE CHECKSUM: 10f08df75bf61fdd8c2174ded4b9aa3430e5ea38
+
+COCOAPODS: 1.7.2
