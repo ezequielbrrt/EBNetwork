@@ -6,11 +6,17 @@
 [![Platform](https://img.shields.io/cocoapods/p/EBNetwork.svg?style=flat)](https://cocoapods.org/pods/EBNetwork)
 
 ## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+### METHODS
+- POST
+- GET
+- PUT
+- DELETE
+### PROTOCOLS
+The library needs the view controller delegate
 
 ## Requirements
-
+- Swift 5
+- Xcode 10
 ## Installation
 
 EBNetwork is available through [CocoaPods](https://cocoapods.org). To install
@@ -22,7 +28,7 @@ pod 'EBNetwork'
 
 ## Author
 
-ezequielbtc, ezequiel.barreto@betechcapital.com
+ezequielbrrt, ezequielbrrt@gmail.com
 
 ## License
 

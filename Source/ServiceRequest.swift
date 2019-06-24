@@ -73,7 +73,65 @@ public class ServiceRequest: NSObject{
         
         Request.httpBody = postString?.data(using: .utf8)
         
+        if hasInternet(){
+            requestTimer()
+            ExecuteTask(Request: Request)
+        }
+        else {
+            notInternetAlert()
+        }
+        
+    }
+    
+    //PUT Method
+    func RequestPUT(Parameters : NSDictionary, URLString : String){
+        print("\n")
+        print("Request(PUT) " + URLString);
+        var Request = URLRequest(url: URL(string: URLString)!)
+        Request.httpMethod = "PUT"
+        Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var postString : String? = "";
+        
+        if Parameters.count != 0
+        {
+            postString! = try! DictionaryToJSONData(jsonObject: Parameters)!
+            
+            print("with Body:\n"+postString!)
+        }
+        
+        Request.httpBody = postString?.data(using: .utf8)
+        
         if self.hasInternet(){
+            requestTimer()
+            ExecuteTask(Request: Request)
+        }
+        else {
+            notInternetAlert()
+        }
+        
+    }
+    
+    //DELETE Method
+    func RequestDELETE(Parameters : NSDictionary, URLString : String)
+    {
+        print("\n")
+        print("Request(POST) " + URLString);
+        var Request = URLRequest(url: URL(string: URLString)!)
+        Request.httpMethod = "DELETE"
+        
+        Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        var postString : String? = "";
+        
+        if Parameters.count != 0{
+            postString! = try! DictionaryToJSONData(jsonObject: Parameters)!
+            print("with Body:\n"+postString!)
+        }
+        
+        Request.httpBody = postString?.data(using: .utf8)
+        
+        if hasInternet(){
             requestTimer()
             ExecuteTask(Request: Request)
         }
@@ -108,14 +166,13 @@ public class ServiceRequest: NSObject{
         
         //if self.currentService != ServiceName.uploadFile {
             
-            if seconds == ServiceRequest.SECONDS_TO_SHOW_SLOW_CONNECTION && requestDone == false
-            {
-                if (self.controller != nil)
-                {
-                    print("slow connection")
-                    self.delegate?.slowConnection()
-                }
+        if seconds == ServiceRequest.SECONDS_TO_SHOW_SLOW_CONNECTION && requestDone == false{
+            if (self.controller != nil){
+                print("slow connection")
+                self.delegate?.slowConnection()
             }
+        }
+        
         //}
 //        else {
 //
@@ -127,8 +184,7 @@ public class ServiceRequest: NSObject{
 //            }
 //        }
         
-        if requestDone == true
-        {
+        if requestDone == true{
             timer?.invalidate()
             timer = nil
             seconds = nil
