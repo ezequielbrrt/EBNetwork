@@ -2,7 +2,7 @@
 //  ServiceRequest.swift
 //  EBNetwork
 //
-//  Created by beTech CAPITAL on 6/21/19.
+//  Created by Ezequiel Barreto on 6/21/19.
 //
 
 import UIKit
@@ -41,11 +41,19 @@ public class ServiceRequest: NSObject{
     }
     
     //GET Method
-    public func RequestGET(URLString : String){
+    public func RequestGET(URLString : String, token: String? = nil){
         print("\n")
         print("Request(GET) " + URLString)
         var Request = URLRequest(url: URL(string: URLString)!)
         Request.httpMethod = "GET"
+        
+        Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // If have token, adds Bearer Hearder Authorization
+        if token != nil{
+            print("Authorization 👮🏽‍♀️: Bearer " + token!)
+            Request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        }
 
         if hasInternet(){
             requestTimer()
@@ -57,12 +65,18 @@ public class ServiceRequest: NSObject{
     }
     
     //POST Method
-    public func RequestPOST(Parameters : NSDictionary, URLString : String){
+    public func RequestPOST(Parameters : NSDictionary, URLString : String, token: String? = nil){
         print("\n")
         print("Request(POST) " + URLString);
         var Request = URLRequest(url: URL(string: URLString)!)
         Request.httpMethod = "POST"
         Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // If have token, adds Bearer Hearder Authorization
+        if token != nil{
+            print("Authorization 👮🏽‍♀️: Bearer " + token!)
+            Request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        }
         
         var postString : String? = "";
         
@@ -84,17 +98,22 @@ public class ServiceRequest: NSObject{
     }
     
     //PUT Method
-    func RequestPUT(Parameters : NSDictionary, URLString : String){
+    public func RequestPUT(Parameters : NSDictionary, URLString : String, token: String? = nil){
         print("\n")
         print("Request(PUT) " + URLString);
         var Request = URLRequest(url: URL(string: URLString)!)
         Request.httpMethod = "PUT"
         Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        // If have token, adds Bearer Hearder Authorization
+        if token != nil{
+            print("Authorization 👮🏽‍♀️: Bearer " + token!)
+            Request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        }
+        
         var postString : String? = "";
         
-        if Parameters.count != 0
-        {
+        if Parameters.count != 0{
             postString! = try! DictionaryToJSONData(jsonObject: Parameters)!
             
             print("with Body:\n"+postString!)
@@ -113,8 +132,7 @@ public class ServiceRequest: NSObject{
     }
     
     //DELETE Method
-    func RequestDELETE(Parameters : NSDictionary, URLString : String)
-    {
+    public func RequestDELETE(Parameters : NSDictionary, URLString : String, token: String? = nil){
         print("\n")
         print("Request(POST) " + URLString);
         var Request = URLRequest(url: URL(string: URLString)!)
@@ -122,8 +140,13 @@ public class ServiceRequest: NSObject{
         
         Request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        var postString : String? = "";
+        // If have token, adds Bearer Hearder Authorization
+        if token != nil{
+            print("Authorization 👮🏽‍♀️: Bearer " + token!)
+            Request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        }
         
+        var postString : String? = ""
         if Parameters.count != 0{
             postString! = try! DictionaryToJSONData(jsonObject: Parameters)!
             print("with Body:\n"+postString!)
@@ -138,7 +161,6 @@ public class ServiceRequest: NSObject{
         else {
             notInternetAlert()
         }
-        
     }
     
     func notInternetAlert(){
@@ -372,7 +394,7 @@ public class ServiceRequest: NSObject{
     
     
     // MARK: Helper functions
-    func hasInternet() -> Bool{
+    public func hasInternet() -> Bool{
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -392,7 +414,7 @@ public class ServiceRequest: NSObject{
         return (isReachable && !needsConnection)
     }
     
-    func JSONDataToDiccionary(text: String) -> [String: Any]? {
+    public func JSONDataToDiccionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -403,7 +425,7 @@ public class ServiceRequest: NSObject{
         return nil
     }
     
-    func DictionaryToJSONData(jsonObject: AnyObject) throws -> String?{
+    public func DictionaryToJSONData(jsonObject: AnyObject) throws -> String?{
         let data: NSData? = try? JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions.prettyPrinted) as NSData
         
         var jsonStr: String?

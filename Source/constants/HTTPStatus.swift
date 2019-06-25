@@ -2,7 +2,7 @@
 //  HTTPStatus.swift
 //  EBNetwork
 //
-//  Created by beTech CAPITAL on 6/24/19.
+//  Created by Ezequiel Barreto on 6/24/19.
 //
 
 import Foundation

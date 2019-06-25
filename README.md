@@ -13,7 +13,15 @@
 - DELETE
 ### PROTOCOLS
 The library needs the view controller delegate
-
+### Tools
+Additionally the library includes these methods that can help you in your project.
+- hasInternet()
+    - Method to know if the application has internet or not, inlude wifi, 3G, 4G
+    - Returns True or false
+- JSONDataToDiccionary()
+    - Convert JSON To NSDictionary
+- DictionaryToJSONData()
+    - Convert Dictionary to JSONData   
 ## Requirements
 - Swift 5
 - Xcode 10
