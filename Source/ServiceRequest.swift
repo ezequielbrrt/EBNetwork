@@ -12,9 +12,9 @@ import SystemConfiguration
 //Requiered Protocl methods
 public protocol ResponseServicesProtocol: class
 {
-    func onSucces(result : Any, name : String, httpStatus: Int?)
+    func onSucces(result : Any, name : Any, httpStatus: Int?)
     
-    func onError(error : String, name : String, httpStatus: Int?)
+    func onError(error : String, name : Any, httpStatus: Int?)
     
     func slowConnection()
 }
@@ -22,7 +22,7 @@ public protocol ResponseServicesProtocol: class
 public class ServiceRequest: NSObject{
     weak var delegate : ResponseServicesProtocol?
     weak var controller : UIViewController?
-    var currentService : String?
+    var currentService : Any?
     var timer : Timer?
     var seconds : Int?
     var requestDone = false
@@ -33,7 +33,7 @@ public class ServiceRequest: NSObject{
         super.init()
     }
     
-    public init(delegate: ResponseServicesProtocol, service : String){
+    public init(delegate: ResponseServicesProtocol, service : Any){
         self.delegate = delegate;
         self.currentService = service
         self.controller = delegate as? UIViewController
