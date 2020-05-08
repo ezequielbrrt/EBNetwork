@@ -1,4 +1,4 @@
-# EBNetwork
+# EBNetwork (Http library for IOS)
 
 [![CI Status](https://img.shields.io/travis/ezequielbtc/EBNetwork.svg?style=flat)](https://travis-ci.org/ezequielbtc/EBNetwork)
 [![Version](https://img.shields.io/cocoapods/v/EBNetwork.svg?style=flat)](https://cocoapods.org/pods/EBNetwork)
